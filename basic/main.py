@@ -1,3 +1,6 @@
+import math
+
+
 def fib(n):
     if n == 0: return 0
     elif n == 1 or n == 2: return 1
@@ -24,4 +27,25 @@ def convert_ascii(s):
     return [ord(c) for c in s]
 
 
-print(convert_ascii("aa"))
+def Check_prime(n):
+    if n > 1:
+        for i in range(2, int(math.sqrt(n))):
+            if n % i == 0: return False
+        return True
+    return False
+
+
+def Print(n):
+    i = 2
+    while (n > 1):
+        if (Check_prime(i)):
+            if n % i == 0:
+                print(i,end = ".")
+                n = n / i
+            else:
+                i = i + 1
+        else:
+            i = i + 1
+
+
+Print(28)
