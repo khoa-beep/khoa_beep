@@ -40,7 +40,7 @@ def Print(n):
     while (n > 1):
         if (Check_prime(i)):
             if n % i == 0:
-                print(i,end = ".")
+                print(i, end=".")
                 n = n / i
             else:
                 i = i + 1
@@ -48,4 +48,23 @@ def Print(n):
             i = i + 1
 
 
-Print(28)
+def Old(n):
+    l = []
+    for i in range(0, n + 1):
+        l.append(i)
+    for i in range(1, len(l)):
+        if i % 3 == 0 and i % 5 == 0:
+            print(i, end=" ")
+
+
+def uscln(a, b):
+    if b == 0: return a
+    return uscln(b, a % b)
+
+
+def bscnn(a, b):
+    return (a * b) // uscln(a, b)
+
+
+print(uscln(3, 4))
+print(bscnn(3,4))
